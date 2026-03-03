@@ -1,0 +1,122 @@
+\hypertarget{obliczeniowe_8cpp}{}\doxysection{Dokumentacja pliku obliczeniowe.\+cpp}
+\label{obliczeniowe_8cpp}\index{obliczeniowe.cpp@{obliczeniowe.cpp}}
+{\ttfamily \#include \char`\"{}obliczeniowe.\+h\char`\"{}}\newline
+\doxysubsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{obliczeniowe_8cpp_a6164bcf91b9d246a405d125f80428ae4}{index}} (\mbox{\hyperlink{structwezel}{wezel}} \mbox{\hyperlink{obliczeniowe_8h_a58bd535321e40913abcf0555e2957bc5}{wsp}})
+\begin{DoxyCompactList}\small\item\em obliczanie numeru id węzła \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structwezel}{wezel}} \mbox{\hyperlink{obliczeniowe_8cpp_ae5ea10a0773db5de458db75ca9a4e760}{wsp}} (int id)
+\begin{DoxyCompactList}\small\item\em obliczanie współrzędnych węzła \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structkrawedz}{krawedz}} \mbox{\hyperlink{obliczeniowe_8cpp_a264c125eb60d80f77918f78d0b8f940c}{generuj\+Krawedz}} (int id, int kierunek, char mapa\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em tworzenie krawedzi miedzy węzłami \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{obliczeniowe_8cpp_a5c9901a50e0bfbace3acab33dd088772}{Bellman\+Ford}} (int $\ast$\&G, char mapa\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em algorytm Bellmana-\/\+Forda \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{obliczeniowe_8cpp_ad8693424c7f5c349dc43f0d3f5599c40}{znajdz\+Drogi}} (int G\mbox{[}$\,$\mbox{]}, int $\ast$\&P, char mapa\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em wyznacza trasy z każdego węzła do punktu startowego \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Dokumentacja funkcji}
+\mbox{\Hypertarget{obliczeniowe_8cpp_a5c9901a50e0bfbace3acab33dd088772}\label{obliczeniowe_8cpp_a5c9901a50e0bfbace3acab33dd088772}} 
+\index{obliczeniowe.cpp@{obliczeniowe.cpp}!BellmanFord@{BellmanFord}}
+\index{BellmanFord@{BellmanFord}!obliczeniowe.cpp@{obliczeniowe.cpp}}
+\doxysubsubsection{\texorpdfstring{BellmanFord()}{BellmanFord()}}
+{\footnotesize\ttfamily void Bellman\+Ford (\begin{DoxyParamCaption}\item[{int $\ast$\&}]{G,  }\item[{char}]{mapa\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+algorytm Bellmana-\/\+Forda 
+
+
+\begin{DoxyParams}{Parametry}
+{\em G} & -\/ tablica kosztu dotarcia do każdego węzła \\
+\hline
+{\em mapa} & -\/ tablica z zapisaną mapą \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{Zobacz również}
+\mbox{\hyperlink{obliczeniowe_8h_a264c125eb60d80f77918f78d0b8f940c}{generuj\+Krawedz()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{obliczeniowe_8cpp_a264c125eb60d80f77918f78d0b8f940c}\label{obliczeniowe_8cpp_a264c125eb60d80f77918f78d0b8f940c}} 
+\index{obliczeniowe.cpp@{obliczeniowe.cpp}!generujKrawedz@{generujKrawedz}}
+\index{generujKrawedz@{generujKrawedz}!obliczeniowe.cpp@{obliczeniowe.cpp}}
+\doxysubsubsection{\texorpdfstring{generujKrawedz()}{generujKrawedz()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structkrawedz}{krawedz}} generuj\+Krawedz (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{int}]{kierunek,  }\item[{char}]{mapa\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+tworzenie krawedzi miedzy węzłami 
+
+
+\begin{DoxyParams}{Parametry}
+{\em id} & -\/ numer id węzła \\
+\hline
+{\em mapa} & -\/ tablica z zapisaną mapą \\
+\hline
+{\em kierunek} & -\/ numer kierunku (z tablicy z kierunkami) \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{Zobacz również}
+\mbox{\hyperlink{obliczeniowe_8h_afd3b80b1fed85678272013fe00e57cdf}{kierunki}}\mbox{[}\mbox{]} \mbox{\hyperlink{structkrawedz}{krawedz}} \mbox{\hyperlink{structwezel}{wezel}} \mbox{\hyperlink{obliczeniowe_8h_a58bd535321e40913abcf0555e2957bc5}{wsp()}} \mbox{\hyperlink{obliczeniowe_8h_a6164bcf91b9d246a405d125f80428ae4}{index()}} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Zwraca}
+wygenerowana krawędź 
+\end{DoxyReturn}
+\mbox{\Hypertarget{obliczeniowe_8cpp_a6164bcf91b9d246a405d125f80428ae4}\label{obliczeniowe_8cpp_a6164bcf91b9d246a405d125f80428ae4}} 
+\index{obliczeniowe.cpp@{obliczeniowe.cpp}!index@{index}}
+\index{index@{index}!obliczeniowe.cpp@{obliczeniowe.cpp}}
+\doxysubsubsection{\texorpdfstring{index()}{index()}}
+{\footnotesize\ttfamily int index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structwezel}{wezel}}}]{wsp }\end{DoxyParamCaption})}
+
+
+
+obliczanie numeru id węzła 
+
+
+\begin{DoxyParams}{Parametry}
+{\em wsp} & -\/ wspólrzedne węzła \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+numer id węzła 
+\end{DoxyReturn}
+\mbox{\Hypertarget{obliczeniowe_8cpp_ae5ea10a0773db5de458db75ca9a4e760}\label{obliczeniowe_8cpp_ae5ea10a0773db5de458db75ca9a4e760}} 
+\index{obliczeniowe.cpp@{obliczeniowe.cpp}!wsp@{wsp}}
+\index{wsp@{wsp}!obliczeniowe.cpp@{obliczeniowe.cpp}}
+\doxysubsubsection{\texorpdfstring{wsp()}{wsp()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structwezel}{wezel}} wsp (\begin{DoxyParamCaption}\item[{int}]{in }\end{DoxyParamCaption})}
+
+
+
+obliczanie współrzędnych węzła 
+
+
+\begin{DoxyParams}{Parametry}
+{\em id} & -\/ numer id węzła \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+współrzedne węzła 
+\end{DoxyReturn}
+\mbox{\Hypertarget{obliczeniowe_8cpp_ad8693424c7f5c349dc43f0d3f5599c40}\label{obliczeniowe_8cpp_ad8693424c7f5c349dc43f0d3f5599c40}} 
+\index{obliczeniowe.cpp@{obliczeniowe.cpp}!znajdzDrogi@{znajdzDrogi}}
+\index{znajdzDrogi@{znajdzDrogi}!obliczeniowe.cpp@{obliczeniowe.cpp}}
+\doxysubsubsection{\texorpdfstring{znajdzDrogi()}{znajdzDrogi()}}
+{\footnotesize\ttfamily void znajdz\+Drogi (\begin{DoxyParamCaption}\item[{int}]{G\mbox{[}$\,$\mbox{]},  }\item[{int $\ast$\&}]{P,  }\item[{char}]{mapa\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+wyznacza trasy z każdego węzła do punktu startowego 
+
+
+\begin{DoxyParams}{Parametry}
+{\em G} & -\/ tablica kosztu dotarcia do każdego węzła \\
+\hline
+{\em P} & -\/ każda komórka tablicy P reprezentuje odpowiedni węzeł i zawiera nr id kolejnego węzła na drodze do punktu startowego \\
+\hline
+{\em mapa} & -\/ tablica z zapisaną mapą \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{Zobacz również}
+\mbox{\hyperlink{obliczeniowe_8h_a264c125eb60d80f77918f78d0b8f940c}{generuj\+Krawedz}} 
+\end{DoxySeeAlso}

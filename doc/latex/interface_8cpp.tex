@@ -1,0 +1,104 @@
+\hypertarget{interface_8cpp}{}\doxysection{Dokumentacja pliku interface.\+cpp}
+\label{interface_8cpp}\index{interface.cpp@{interface.cpp}}
+{\ttfamily \#include \char`\"{}interface.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}obliczeniowe.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+\doxysubsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{interface_8cpp_a248b5f925143100be0b0efa58748f569}{wyswietl\+\_\+char}} (char T\mbox{[}$\,$\mbox{]}, int n, int m)
+\begin{DoxyCompactList}\small\item\em wyswietlanie tablicy znaków \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_8cpp_a880cbb0cbcc4f0c830f0d9bdb991dcf5}{wyswietl\+\_\+int}} (int T\mbox{[}$\,$\mbox{]}, int n, int m)
+\begin{DoxyCompactList}\small\item\em wyswietlanie tablicy liczb całkowitych \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_8cpp_aa5619b03c274722cff554e0cfc0ecf33}{wczytaj\+\_\+map}} (ifstream \&plikin, char $\ast$\&T, string nazwa)
+\begin{DoxyCompactList}\small\item\em wczytywanie mapy z pliku \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_8cpp_af3ea196b41bc2cfe126eb752ad9ba162}{pokaz\+Trase}} (int cel, int P\mbox{[}$\,$\mbox{]}, char $\ast$\&p, char mapa\mbox{[}$\,$\mbox{]}, int zrodloid)
+\begin{DoxyCompactList}\small\item\em Wyswietlanie wytyczonej trasy na mapie. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Dokumentacja funkcji}
+\mbox{\Hypertarget{interface_8cpp_af3ea196b41bc2cfe126eb752ad9ba162}\label{interface_8cpp_af3ea196b41bc2cfe126eb752ad9ba162}} 
+\index{interface.cpp@{interface.cpp}!pokazTrase@{pokazTrase}}
+\index{pokazTrase@{pokazTrase}!interface.cpp@{interface.cpp}}
+\doxysubsubsection{\texorpdfstring{pokazTrase()}{pokazTrase()}}
+{\footnotesize\ttfamily void pokaz\+Trase (\begin{DoxyParamCaption}\item[{int}]{cel,  }\item[{int}]{P\mbox{[}$\,$\mbox{]},  }\item[{char $\ast$\&}]{p,  }\item[{char}]{mapa\mbox{[}$\,$\mbox{]},  }\item[{int}]{zrodloid }\end{DoxyParamCaption})}
+
+
+
+Wyswietlanie wytyczonej trasy na mapie. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em cel} & -\/ wspolrzedne celu \\
+\hline
+{\em P} & -\/ każda komórka tablicy P reprezentuje odpowiedni węzeł i zawiera nr id kolejnego węzła na drodze do punktu startowego \\
+\hline
+{\em p} & -\/ tablica z mapą z naniesioną trasą \\
+\hline
+{\em mapa} & -\/ tablica z zapisana mapą \\
+\hline
+{\em zrodloid} & -\/ nr id punktu startowego \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interface_8cpp_aa5619b03c274722cff554e0cfc0ecf33}\label{interface_8cpp_aa5619b03c274722cff554e0cfc0ecf33}} 
+\index{interface.cpp@{interface.cpp}!wczytaj\_map@{wczytaj\_map}}
+\index{wczytaj\_map@{wczytaj\_map}!interface.cpp@{interface.cpp}}
+\doxysubsubsection{\texorpdfstring{wczytaj\_map()}{wczytaj\_map()}}
+{\footnotesize\ttfamily void wczytaj\+\_\+map (\begin{DoxyParamCaption}\item[{ifstream \&}]{plikin,  }\item[{char $\ast$\&}]{T,  }\item[{string}]{nazwa }\end{DoxyParamCaption})}
+
+
+
+wczytywanie mapy z pliku 
+
+
+\begin{DoxyParams}{Parametry}
+{\em plikin} & -\/ zmienna plikowa \\
+\hline
+{\em T} & -\/ tablica w której bedziemy zapisywac mapę \\
+\hline
+{\em nazwa} & -\/ nazwa pliku z którego bedziemy odczytywac mapę \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interface_8cpp_a248b5f925143100be0b0efa58748f569}\label{interface_8cpp_a248b5f925143100be0b0efa58748f569}} 
+\index{interface.cpp@{interface.cpp}!wyswietl\_char@{wyswietl\_char}}
+\index{wyswietl\_char@{wyswietl\_char}!interface.cpp@{interface.cpp}}
+\doxysubsubsection{\texorpdfstring{wyswietl\_char()}{wyswietl\_char()}}
+{\footnotesize\ttfamily void wyswietl\+\_\+char (\begin{DoxyParamCaption}\item[{char}]{T\mbox{[}$\,$\mbox{]},  }\item[{int}]{n,  }\item[{int}]{m }\end{DoxyParamCaption})}
+
+
+
+wyswietlanie tablicy znaków 
+
+
+\begin{DoxyParams}{Parametry}
+{\em T} & -\/ wyswietlana tablica \\
+\hline
+{\em n} & -\/ ilosc wierszy tablicy \\
+\hline
+{\em m} & -\/ ilosc kolumn tablicy \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interface_8cpp_a880cbb0cbcc4f0c830f0d9bdb991dcf5}\label{interface_8cpp_a880cbb0cbcc4f0c830f0d9bdb991dcf5}} 
+\index{interface.cpp@{interface.cpp}!wyswietl\_int@{wyswietl\_int}}
+\index{wyswietl\_int@{wyswietl\_int}!interface.cpp@{interface.cpp}}
+\doxysubsubsection{\texorpdfstring{wyswietl\_int()}{wyswietl\_int()}}
+{\footnotesize\ttfamily void wyswietl\+\_\+int (\begin{DoxyParamCaption}\item[{int}]{T\mbox{[}$\,$\mbox{]},  }\item[{int}]{n,  }\item[{int}]{m }\end{DoxyParamCaption})}
+
+
+
+wyswietlanie tablicy liczb całkowitych 
+
+
+\begin{DoxyParams}{Parametry}
+{\em T} & -\/ wyswietlana tablica \\
+\hline
+{\em n} & -\/ ilosc wierszy tablicy \\
+\hline
+{\em m} & -\/ ilosc kolumn tablicy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+funkcja niewykorzystana w ostatecznej wersji programu jednak może być przydatna w przypadku chęci zweryfikowania wyglądu tablic lub znalezienia błędu 
+\end{DoxyNote}

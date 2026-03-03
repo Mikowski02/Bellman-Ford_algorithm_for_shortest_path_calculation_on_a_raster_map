@@ -1,42 +1,38 @@
 #ifndef OBLICZENIOWE_H
 #define OBLICZENIOWE_H
 
-using namespace std;
-
 /**
  * @brief wezel -
  * Struktura zawierająca współrzędne węzła
  */
-struct wezel
-{
-    /// wsp x
-    int x;
-    /// wsp y
-    int y;
+struct wezel {
+  /// wsp x
+  int x;
+  /// wsp y
+  int y;
 };
 
 /**
  * @brief krawedz -
  * Struktura zawierająca parametry krawedzi łączącej wezły
  */
-struct krawedz
-{
-    /// nr id węzła początku krawędzi
-    int pocz;
-    /// nr id węzła końca krawędzi
-    int kon;
-    /// waga krawedzi
-    int waga;
+struct krawedz {
+  /// nr id węzła początku krawędzi
+  int pocz;
+  /// nr id węzła końca krawędzi
+  int kon;
+  /// waga krawedzi
+  int waga;
 };
 
 /**
  * @par w - liczba wierszy mapy
  */
-const int w = 15;
+const int w = 512;
 /**
  * @par k- liczba kolumn mapy
  */
-const int k = 30, kosztmax = w * k;
+const int k = 512, kosztmax = 100000000;
 /**
  * @par kierunki
  * tablica ze wspólrzędnościowymi zapisami
@@ -66,7 +62,7 @@ wezel wsp(int in);
  * @see kierunki[] krawedz wezel wsp() index()
  * @return wygenerowana krawędź
  */
-krawedz generujKrawedz(int id, int kierunek, char mapa[]);
+krawedz generujKrawedz(int id, int kierunek, const char mapa[]);
 
 /**
  * @brief algorytm Bellmana-Forda
@@ -74,7 +70,7 @@ krawedz generujKrawedz(int id, int kierunek, char mapa[]);
  * @param mapa - tablica z zapisaną mapą
  * @see generujKrawedz()
  */
-void BellmanFord(int *&G, char mapa[]);
+void BellmanFord(int *G, const char mapa[]);
 
 /**
  * @brief wyznacza trasy z każdego węzła do punktu startowego
@@ -84,6 +80,6 @@ void BellmanFord(int *&G, char mapa[]);
  * @param mapa - tablica z zapisaną mapą
  * @see generujKrawedz
  */
-void znajdzDrogi(int G[], int *&P, char mapa[]);
+void znajdzDrogi(const int G[], int *P, const char mapa[]);
 
 #endif // OBLICZENIOWE_H

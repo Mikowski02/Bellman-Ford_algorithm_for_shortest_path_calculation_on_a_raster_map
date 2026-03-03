@@ -1,8 +1,7 @@
 #ifndef INTERFACE_H
 #define INTERFACE_H
 #include <fstream>
-
-using namespace std;
+#include <string>
 
 /**
  * @brief wyswietlanie tablicy znaków
@@ -10,7 +9,7 @@ using namespace std;
  * @param n - ilosc wierszy tablicy
  * @param m - ilosc kolumn tablicy
  */
-void wyswietl_char(char T[], int n, int m);
+void wyswietl_char(const char T[], int n, int m);
 
 /**
  * @brief wyswietlanie tablicy liczb całkowitych
@@ -21,15 +20,16 @@ void wyswietl_char(char T[], int n, int m);
  * jednak może być przydatna w przypadku chęci zweryfikowania wyglądu tablic
  * lub znalezienia błędu
  */
-void wyswietl_int(int T[], int n, int m);
+void wyswietl_int(const int T[], int n, int m);
 
 /**
  * @brief wczytywanie mapy z pliku
  * @param plikin - zmienna plikowa
  * @param T - tablica w której bedziemy zapisywac mapę
  * @param nazwa - nazwa pliku z którego bedziemy odczytywac mapę
+ * @return true jeśli wczytano poprawnie, false w przeciwnym razie
  */
-void wczytaj_map(ifstream &plikin, char *&T, string nazwa);
+bool wczytaj_map(std::ifstream &plikin, char *T, std::string nazwa);
 
 /**
  * @brief Wyswietlanie wytyczonej trasy na mapie
@@ -40,6 +40,7 @@ void wczytaj_map(ifstream &plikin, char *&T, string nazwa);
  * @param mapa - tablica z zapisana mapą
  * @param zrodloid - nr id punktu startowego
  */
-void pokazTrase(int cel, int P[], char *&p, char mapa[], int zrodloid);
+void pokazTrase(int cel, const int P[], char *p, const char mapa[],
+                int zrodloid);
 
 #endif // INTERFACE_H
