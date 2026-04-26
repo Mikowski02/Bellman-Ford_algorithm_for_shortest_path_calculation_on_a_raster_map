@@ -59,7 +59,20 @@ int main() {
   cout << "podaj nazwe pliku z mapa" << endl;
   cin >> nazwa;
 
+  // Automatyczne dodanie rozszerzenia .txt, jeśli użytkownik go nie wpisał
+  if (nazwa.find(".txt") == string::npos) {
+    nazwa += ".txt";
+  }
+
+  // Sprawdzenie ścieżki (zależnie czy program odpalony z folderu głównego czy z
+  // 'output')
   string sciezka = "map/" + nazwa;
+  ifstream test_pliku(sciezka.c_str());
+  if (!test_pliku.good()) {
+    sciezka = "../map/" + nazwa; // Kiedy uruchamiamy z poziomu folderu output/
+  }
+  test_pliku.close();
+
   if (!wczytaj_map(plikin, mapa, sciezka)) {
     delete[] p;
     delete[] P;
@@ -115,7 +128,7 @@ int main() {
       cin >> odp;
     }
 
-  } while (odp == 'T');
+  } while (odp == 'T' || odp == 't');
 
   delete[] p;
   delete[] P;

@@ -38,16 +38,21 @@ void BellmanFord(int *G, const char mapa[]) {
   // The Bellman-Ford algorithm relaxes all edges |V|-1 times.
   // For a grid, |V| = w * k.
   for (int i = 0; i < (w * k) - 1; i++) {
+    bool changed = false;
     for (int j = 0; j < w * k; j++) { // For each vertex 'j'
       for (int u = 0; u < 4; u++) {
         krawedz e = generujKrawedz(j, u, mapa); // Generate its outgoing edges
         // If a path to the start of the edge exists and the edge is valid
-        if (G[e.pocz] < kosztmax && e.kon != -1) {
-          if (G[e.kon] > G[e.pocz] + e.waga) // Relax the edge
+        if (G[e.pocz] < kosztmax && e.kon != -1 && e.waga < kosztmax) {
+          if (G[e.kon] > G[e.pocz] + e.waga) { // Relax the edge
             G[e.kon] = G[e.pocz] + e.waga;
+            changed = true;
+          }
         }
       }
     }
+    if (!changed)
+      break; // Optymalizacja: jeśli nie było zmian, przerywamy pętlę
   }
 }
 
@@ -58,7 +63,7 @@ void znajdzDrogi(const int G[], int *P, const char mapa[]) {
   for (int j = 0; j < w * k; j++)
     for (int u = 0; u < 4; u++) {
       krawedz e = generujKrawedz(j, u, mapa);
-      if (e.waga < kosztmax)
+      if (e.waga < kosztmax && G[e.pocz] < kosztmax && G[e.kon] < kosztmax)
         if (G[e.pocz] == G[e.kon] + e.waga)
           P[j] = e.kon;
     }

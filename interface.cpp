@@ -40,10 +40,17 @@ bool wczytaj_map(ifstream &plikin, char *T, string nazwa) {
     return false;
   }
 
-  plikin >> t;
-
-  while (t != '@' && t != '.')
-    plikin >> t;
+  bool found = false;
+  while (plikin >> t) {
+    if (t == '@' || t == '.') {
+      found = true;
+      break;
+    }
+  }
+  if (!found) {
+    plikin.close();
+    return false;
+  }
 
   T[0] = t;
   for (int i = 1; i < w * k; i++)
